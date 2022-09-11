@@ -22,10 +22,10 @@ export const CurrentWeather = () => {
   }
 
   return (
-    <section className="currentWeather">
-      <div className="currentWeather--details">
+    <section className="currentWeather text-gray-200 bg-slate-800 w-auto h-full rounded-lg m-2 p-2">
+      <div className="currentWeather--details ">
         <h2>Actual Temp</h2>
-        <span>{(weather.main.temp - 273).toFixed(2)}</span>
+        <span>{(weather.main.temp - 273).toFixed(2)} °C</span>
         <ul className="currentWeather--stats">
           <li>
             <span>Wind </span>
@@ -37,7 +37,9 @@ export const CurrentWeather = () => {
           </li>
         </ul>
         <div className="currentWeather--actual">
-          <h3>Raining</h3>
+          {weather.weather.map((type) => (
+            <h3 key={type.id}>{type.main}</h3>
+          ))}
         </div>
       </div>
       <div className="currentWeather--imgs"></div>

@@ -1,11 +1,8 @@
 import { CurrentWeather } from "./components/CurrentWeather";
 
-import "./App.css";
-
 function App() {
   return (
-    <div className="App">
-      <p>Hello from VSCode</p>
+    <div className="App ">
       <CurrentWeather />
     </div>
   );
