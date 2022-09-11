@@ -1,10 +1,13 @@
+import { ApiContextProvider } from "./context/ApIContext";
 import { CurrentWeather } from "./components/CurrentWeather";
 
 function App() {
   return (
-    <div className="App ">
-      <CurrentWeather />
-    </div>
+    <ApiContextProvider>
+      <div className="App ">
+        <CurrentWeather />
+      </div>
+    </ApiContextProvider>
   );
 }
 
