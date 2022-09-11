@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { ListDays } from "../ListDays";
 
 export const CurrentWeather = () => {
   const [weather, setWeather] = useState(null);
-
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch(
-      `${process.env.REACT_APP_API}weather?lat=44.34&lon=10.99&appid=${process.env.REACT_APP_API_KEY}`
+      `${process.env.REACT_APP_API}weather?lat=24.34&lon=10.99&appid=${process.env.REACT_APP_API_KEY}`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -22,8 +22,9 @@ export const CurrentWeather = () => {
   }
 
   return (
-    <section className="currentWeather text-gray-200 bg-slate-800 w-auto h-full rounded-lg m-2 p-2">
+    <section className="currentWeather text-gray-200 bg-slate-800 w-auto h-full rounded-lg m-2 p-2 flex justify-evenly">
       <div className="currentWeather--details ">
+        <h1>{weather.timezone}</h1>
         <h2>Actual Temp</h2>
         <span>{(weather.main.temp - 273).toFixed(2)} °C</span>
         <ul className="currentWeather--stats">
@@ -42,7 +43,10 @@ export const CurrentWeather = () => {
           ))}
         </div>
       </div>
-      <div className="currentWeather--imgs"></div>
+      <div className="currentWeather--imgs">
+        <img src="" alt="Weather" />
+      </div>
+      {/* <ListDays days={weather} /> */}
     </section>
   );
 };
