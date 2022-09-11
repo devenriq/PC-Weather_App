@@ -27,6 +27,18 @@ export const CurrentWeather = () => {
         <div className="currentWeather--actual">
           <h3>Raining</h3>
         </div>
+        <div className="currentWeather--actual">
+          <h3>Raining</h3>
+        </div>
+        <div className="currentWeather--actual">
+          <h3>Raining</h3>
+        </div>
+        <div className="currentWeather--actual">
+          <h3>Raining</h3>
+        </div>
+        <div className="currentWeather--actual">
+          <h3>Raining</h3>
+        </div>
       </div>
       <div className="currentWeather--imgs"></div>
     </section>
